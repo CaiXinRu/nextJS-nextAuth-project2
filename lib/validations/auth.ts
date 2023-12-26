@@ -15,6 +15,10 @@ export const userSignUpValidation = z
       .min(1, "Username is required")
       .max(50, "Username must be less than 50 characters"),
     email: z.string().min(1, "Email is required").email("Invalid email"),
+    password: z
+      .string()
+      .min(1, "Old password is required")
+      .min(8, "Password must be 8+ characters"),
     oldPassword: z
       .string()
       .min(1, "Old password is required")
